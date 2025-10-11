@@ -117,6 +117,37 @@
 			]
 		},
 		{
+		"title": "Multi-Agent Drone Formation Control",
+		"description": "Built a modular, three‑phase control architecture for coordinating teams of robots to form shapes, follow a moving leader, and dynamically reshape for coverage or obstacle accommodation. Phase I uses the Hungarian algorithm for globally optimal waypoint assignment into arbitrary planar formations. Phase II transitions to a leader–follower controller that uses velocity feedforward, spring–damper error correction, and short‑range repulsion with only leader broadcasts and local neighbor sensing—no all‑to‑all comms. Phase III extends the controller with a leader‑triggered expansion factor γ to scale formation radius, increasing coverage while preserving safety. The design mirrors real deployments: a global initialization window, followed by decentralized tracking robust to partial information and link loss.",
+		"videos": [
+			{
+			"caption": "Drone Formation - Switching controllers in an 'obstacle zone'",
+			"link": "https://youtu.be/00QxM9rtz7s"
+			},
+			{
+			"caption": "Drone Formation - Drones entering the formation via the Hungarian algorithm, and avoiding collision",
+			"link": "https://youtu.be/Cq7M5lvvUJU"
+			}
+		],
+		
+		"achievements": [
+			"Implemented three-phase formation control framework for 15 agents achieving convergence in under 12 seconds.",
+			"Developed decentralized leader-follower controller with MSE tracking error under 0.04 m².",
+			"Integrated Hungarian algorithm for optimal agent-waypoint assignment preventing conflicts.",
+			"Built collision avoidance system using short-range repulsion fields ensuring agent safety.",
+			"Created adaptive formation scaling achieving 50% coverage increase within 2 seconds on-demand.",
+			"Link to work: https://drive.google.com/file/d/1Z3gihs5Ecm0Sc0oSaJTWsMsB9F11QiZi/view?usp=sharing"
+		],
+		"skills": [
+			"ROS2",
+			"Python",
+			"Hungarian Algorithm",
+			"Optimization",
+			"Collision Avoidance",
+			"Controllers"
+		]
+		},
+		{
 			"title": "Fast Car",
 			"description": "Constructed a robot using a 1/4 inch MDF panel base with DC motors, integrated encoders, and wheels.",
 			"videos": [],

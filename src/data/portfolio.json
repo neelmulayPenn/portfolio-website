@@ -35,6 +35,13 @@
 	],
 	"experience": [
 		{
+			"title": "Robotics Software Engineering Intern",
+			"company": "ST Engineering, Aethon",
+			"period": "Jun 2025 - Present",
+			"location": "Pittsburgh, PA, USA",
+			"description": "Developing software for autonomous mobile robots"
+		},
+		{
 			"title": "Graduate Research Assistant",
 			"company": "General Robotics, Automation, Sensing, & Perception Lab",
 			"period": "Nov 2024 - Present",
@@ -126,6 +133,12 @@
 			"image": "/project-covers/pick-and-place.png",
 			"description": "Implemented inverse kinematics algorithms for precise control of a robotic arm, enabling accurate block detection, pick-up, and stacking in both static and dynamic environments.",
 			"tags": ["Python", "Kinematics", "Motion Planning"]
+		},
+		{
+			"title": "Multi-Agent Drone Formation Control",
+			"image": "/project-covers/distributed-robotics.png",
+			"description": "Built a controller to mantain a formation-control in a distributed manner",
+			"tags": ["Drones", "Distributed Robotics", "Formation Control"]
 		},
 		{
 			"title": "Fast Car",
