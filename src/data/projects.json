@@ -65,24 +65,112 @@
 				{
 					"caption": "Autonomous Racing Demonstration - Video 2",
 					"link": "https://www.youtube.com/watch?v=z-noRTd0E7c"
+				},
+				{
+					"caption": "F1Tenth Final Race - Outdoors!",
+					"link": "https://youtu.be/lUgOXTFKQM0"
+				},
+				{
+					"caption": "Model Predictive Control in Simulation",
+					"link": "https://youtu.be/nyyMD8pShpw"
+				}
+				
+
+			],
+			"images": [],
+				"skills": [
+				"SLAM & Occupancy Grid Mapping",
+				"Pure Pursuit & Waypoint Navigation",
+				"MPPI & RRT Motion Planning",
+				"Autonomous Emergency Braking (AEB)",
+				"LiDAR Perception & Scan Processing",
+				"ROS2 (Python/C++)",
+				"NVIDIA Jetson (Embedded Deployment)",
+				"Sim2Real (Gazebo → Real World)",
+				"Real-World Autonomous Racing",
+				"System Integration & Hardware Debugging"
+			],
+			"achievements": [
+			"Implemented real-time SLAM on an F1Tenth racecar using LiDAR and odometry to build accurate occupancy grid maps of indoor and outdoor race environments, then generated and logged waypoint trajectories for the car to follow autonomously at high speed.",
+			"Developed and tuned a Pure Pursuit controller for smooth high-speed waypoint tracking and implemented Autonomous Emergency Braking (AEB) using LiDAR scan thresholding to prevent collisions — validated in both simulation (Gazebo/RViz) and real-world track conditions.",
+			"Implemented and compared sampling-based motion planners including RRT for global path planning and MPPI for real-time reactive obstacle avoidance, evaluating trade-offs between planning horizon, compute cost, and collision safety on embedded hardware.",
+			"Deployed the full autonomy stack on an NVIDIA Jetson, integrating SICK LiDAR and stereo camera perception with localization, planning, and control nodes in a modular ROS2 architecture — achieving reliable Sim2Real transfer from Gazebo to physical hardware.",
+			"Competed in an outdoor autonomous racing competition, achieving a podium finish through optimized waypoint tuning, aggressive but stable Pure Pursuit gains, and robust real-time obstacle handling under race conditions."
+			]
+		},
+		{
+			"title": "Autonomous Search and Rescue",
+			"description": "Built a real-time autonomous navigation and human detection system on an F1Tenth racecar platform, deploying MPPI-based obstacle avoidance and YOLOv8 human detection entirely onboard a Jetson Orin for search-and-rescue in cluttered environments.",
+			"videos": [
+				{
+					"caption": "Search and Rescue using F1/10th racecar",
+					"link": "https://www.youtube.com/watch?v=po87IgysB-s"
 				}
 			],
 			"images": [],
-			"skills": [
-				"ROS2",
-				"Python",
-				"Autonomous driving algorithms",
-				"SLAM",
-				"Particle Filters",
-				"Sensor fusion",
-				"Perception",
-				"Racing"
+
+			  "skills": [
+				"ROS2 (Python/C++)",
+				"MPPI Motion Planning",
+				"LiDAR Perception & Preprocessing",
+				"Particle Filter Localization",
+				"YOLOv8 Object Detection",
+				"RGB-D 3D Localization",
+				"NVIDIA Jetson Orin (Embedded Deployment)",
+				"Sim2Real Validation (Gazebo → Real World)",
+				"RViz Visualization",
+				"Real-World Autonomous Systems Testing"
 			],
 			"achievements": [
-				"High-Performance Control & Motion Planning: Implemented SLAM for real-time environmental awareness and developed path planning algorithms for smooth trajectory generation, including pure pursuit for precise steering and model predictive control (MPC) for optimized motion",
-				"Simulation & Real-World Testing: Designed and tested autonomous driving algorithms in Gazebo and RViz, ensuring robust performance in both simulation and hardware",
-				"Hardware & System Integration: Programmed the autonomous car using NVIDIA Jetson, integrating LiDAR sensors and stereo cameras for real-time perception",
-				"Race-Ready Reactive & Map-Based Algorithms: Integrated map-based strategies for race-specific optimizations and developed reactive driving algorithms for dynamic obstacle avoidance"
+				"Designed and deployed a full autonomy stack on an F1Tenth racecar running entirely onboard an NVIDIA Jetson Orin — integrating SICK LiDAR, RealSense RGB-D camera, particle filter localization, MPPI motion planning, and YOLOv8 detection into a modular ROS2 pipeline operating at 30Hz in real time.",
+				"Implemented MPPI (Model Predictive Path Integral) control from scratch, sampling 256 kinematically feasible trajectory rollouts per cycle and evaluating each with a custom cost function penalizing obstacle proximity, curvature, and goal distance — enabling reactive navigation through cluttered, partially unknown environments without a global obstacle map.",
+				"Engineered a geometry-aware rectangle footprint collision model to replace the naive point-mass abstraction, computing minimum clearance across all four vehicle corners at each timestep to produce sharper near-miss vs. collision discrimination and safer high-speed maneuvering.",
+				"Built a LiDAR preprocessing pipeline to handle noisy real-world sensor data — filtering NaN/Inf returns, rejecting low-intensity reflections from specular surfaces, and clipping range outliers — improving MPPI obstacle cost reliability in a real hallway environment.",
+				"Integrated YOLOv8 human detection with Intel RealSense depth alignment to localize detected persons as 3D world-frame coordinates using the pinhole camera model, publishing detections to a ROS2 topic for first-responder visualization on RViz at 86% peak confidence.",
+				"Validated the full system across 10 autonomous laps in a real cluttered environment with no prior obstacle knowledge, achieving 80% navigation success and 90% human detection accuracy — with failures traced to Jetson compute bottlenecks at dense LiDAR loads rather than algorithmic failures."
+			],
+			"pdfs": [
+				{
+					"title": "Autonomous Search and Rescue",
+					"url": "https://drive.google.com/file/d/1sMft75zaBUqQv_REMaY6WjxSRxgWEVz8/view?usp=sharing"
+				}
+			]
+
+		},
+		{
+			"title": "Semantic Segmentation for Autonomous Driving",
+			"description": "Implemented and compared CNN and transformer-based semantic segmentation architectures on urban driving scenes, evaluating trade-offs between model complexity, class imbalance handling, and real-world perception performance.",
+			
+			"images": [
+				"https://drive.google.com/file/d/1eWwTIHWpxSq0cZD1Ku0VEmY5Or0TJsPA/view?usp=sharing",
+				"https://drive.google.com/file/d/14yDThpqj_2XBP7wBRO35FJpAO7S0hLgO/view?usp=sharing",
+				"https://drive.google.com/file/d/1CBkLoGiga2Gv0P7JlTlanyVzVO2MLHkZ/view?usp=sharing",
+				"https://drive.google.com/file/d/1T9GUK5E57jDr1SwUoK5xBUk6CqexUJI3/view?usp=sharing",
+				"https://drive.google.com/file/d/1OXMa8Ovezxf3RfCRT3-te408LjWMmb7n/view?usp=sharing"
+			],
+			
+			"skills": [
+				"PyTorch (U-Net, SegFormer)",
+				"Transfer Learning & Fine-Tuning",
+				"Semantic Segmentation",
+				"Computer Vision for Robotics",
+				"Data Augmentation (Albumentations)",
+				"Loss Function Design (Dice, Weighted CE)",
+				"Model Evaluation (mIoU, Pixel Accuracy)",
+				"Python, GPU Training (Google Colab)"
+			],
+			"achievements": [
+				"Implemented a U-Net architecture from scratch in PyTorch with a symmetric encoder-decoder design, Group Normalization, skip connections, and Dice loss to handle class imbalance, training end-to-end on the Cityscapes urban driving dataset for 50 epochs achieving 28% mIoU.",
+				"Built a custom PyTorch dataset wrapper with synchronized image-mask augmentation pipelines using Albumentations, including Gaussian noise, brightness/contrast variation, and horizontal flipping to simulate real-world sensor and lighting variability.",
+				"Fine-tuned a pretrained SegFormer-B1 transformer model on Cityscapes by freezing the hierarchical encoder and retraining only the MLP decoder with AdamW and weighted cross-entropy loss, boosting mIoU from 55% to 65% and significantly improving segmentation of safety-critical classes like pedestrians, traffic signs, and poles.",
+				"Performed detailed per-class IoU analysis across 19 semantic categories, identifying that transformer-based global attention is critical for small and rare object detection — SegFormer achieved 70% IoU on trucks and buses where U-Net scored zero.",
+				"Analyzed architectural trade-offs between convolutional and transformer-based models for real-time robotic perception, concluding that loss function design and class weighting are as impactful as architecture choice for deployment on class-imbalanced real-world datasets."
+			],
+			"pdfs": [
+				{
+					"title": "Semantic Segmentation for Autonomous Driving",
+					"url": "https://drive.google.com/file/d/1FxgGwqCBOZSga9cJJQdHftDSIrWrPcEw/view?usp=sharing"
+				}
 			]
 		},
 		{
@@ -146,7 +234,14 @@
 			"Optimization",
 			"Collision Avoidance",
 			"Controllers"
-		]
+		],
+		"pdfs": [
+				{
+					"title": "Multi-Agent Drone Formation Control",
+					"url": "https://drive.google.com/file/d/1R4K0cPNiclO2R9iaOwx6v957OCn-hWDh/view?usp=sharing"
+				}
+			]
+
 		},
 		{
 			"title": "Fast Car",

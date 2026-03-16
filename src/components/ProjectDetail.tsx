@@ -22,6 +22,7 @@ interface Project {
 	location?: string;
 	videos?: VideoData[]; // Updated type
 	images?: string[];
+	pdfs?: { title?: string; url: string }[];
 }
 
 interface ProjectsData {
@@ -114,6 +115,19 @@ const getGoogleDriveImageUrl = (url: string): string | null => {
 	return null;
 };
 
+// --- Google Drive PDF Preview Helper ---
+const getGoogleDrivePdfPreviewUrl = (url: string): string => {
+    if (!url) return url;
+    if (url.includes('drive.google.com/file/d')) {
+        const match = url.match(/\/d\/([^\/]+)/);
+        if (match && match[1]) {
+            return `https://drive.google.com/file/d/${match[1]}/preview`;
+        }
+    }
+    // If it's already a direct PDF link (or other host), return as-is.
+    return url;
+};
+
 // --- Project Detail Component ---
 
 const ProjectDetail = (): JSX.Element => {
@@ -130,6 +144,9 @@ const ProjectDetail = (): JSX.Element => {
 	// State for image modal (keeping this separate)
 	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 	const [isImageOpen, setIsImageOpen] = useState<boolean>(false);
+
+	// State for PDF modals - an array where each index corresponds to a PDF open state
+	const [pdfOpen, setPdfOpen] = useState<boolean[]>([]);
 
 	useEffect(() => {
 		try {
@@ -152,6 +169,8 @@ const ProjectDetail = (): JSX.Element => {
 			}
 
 			setProject(projectData);
+			// Initialize PDF open state for this project's pdfs
+			setPdfOpen(new Array(projectData.pdfs?.length ?? 0).fill(false));
 			// Reset video index when project changes
 			setSelectedVideoIndex(0);
 			setIsLoading(false);
@@ -178,6 +197,23 @@ const ProjectDetail = (): JSX.Element => {
 	const closeImage = () => {
 		setIsImageOpen(false);
 		setSelectedImage(null);
+	};
+
+	// --- PDF Handlers (per-PDF modal state) ---
+	const openPdf = (index: number) => {
+		setPdfOpen((prev) => {
+			const copy = [...prev];
+			copy[index] = true;
+			return copy;
+		});
+	};
+
+	const closePdf = (index: number) => {
+		setPdfOpen((prev) => {
+			const copy = [...prev];
+			copy[index] = false;
+			return copy;
+		});
 	};
 
 	// --- Navigation Handler ---
@@ -267,6 +303,7 @@ const ProjectDetail = (): JSX.Element => {
 								{currentVideoData.caption}
 							</motion.p>
 						)}
+
 
 						{/* Main Video Player Area */}
 						<motion.div
@@ -371,6 +408,100 @@ const ProjectDetail = (): JSX.Element => {
 					</div>
 				)}
 				{/* --- End Video Gallery Section --- */}
+
+				{/* --- PDF Viewer Section (renders regardless of videos) --- */}
+				{project.pdfs && project.pdfs.length > 0 && (
+					<div className='mb-12 md:mb-16'>
+						<h2 className='text-3xl md:text-4xl font-bold mb-6'>PROJECT REPORT</h2>
+						<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+							{project.pdfs.map((pdf, index) => {
+								const embedUrl = getGoogleDrivePdfPreviewUrl(pdf.url);
+								return (
+									<div
+										key={index}
+										className='bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800'
+									>
+										<div className='relative w-full h-48'>
+											<iframe
+												src={embedUrl}
+												className='w-full h-full'
+												title={pdf.title || `PDF ${index + 1}`}
+												loading='lazy'
+												aria-hidden='false'
+											></iframe>
+										</div>
+										<div className='p-4 flex items-center justify-between gap-4'>
+											<div className='flex-1'>
+												<p className='text-lg font-semibold mb-1'>
+													{pdf.title || `Document ${index + 1}`}
+												</p>
+											</div>
+											<div className='flex-shrink-0 flex gap-2'>
+												<button
+													onClick={() => openPdf(index)}
+													className='bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md'
+												>
+													Open
+												</button>
+												<a
+													href={pdf.url}
+													target='_blank'
+													rel='noreferrer'
+													className='bg-zinc-800 hover:bg-zinc-700 text-white px-3 py-1 rounded-md'
+												>
+													New Tab
+												</a>
+											</div>
+										</div>
+
+										{/* Per-PDF Modal */}
+										{pdfOpen[index] && (
+											<motion.div
+												initial={{ opacity: 0 }}
+												animate={{ opacity: 1 }}
+												exit={{ opacity: 0 }}
+												className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-90'
+												onClick={() => closePdf(index)}
+											>
+												<motion.button
+													initial={{ scale: 0.5, opacity: 0 }}
+													animate={{ scale: 1, opacity: 1 }}
+													exit={{ scale: 0.5, opacity: 0 }}
+													onClick={(e) => {
+														e.stopPropagation();
+														closePdf(index);
+													}}
+													className='absolute top-4 right-4 z-20 p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 transition-colors text-white'
+													aria-label='Close PDF viewer'
+												>
+													<X size={24} />
+												</motion.button>
+												<motion.div
+													initial={{ scale: 0.9, opacity: 0 }}
+													animate={{ scale: 1, opacity: 1 }}
+													exit={{ scale: 0.9, opacity: 0 }}
+													className='relative w-full max-w-5xl max-h-[90vh]'
+													onClick={(e) => e.stopPropagation()}
+												>
+													<iframe
+														src={embedUrl}
+														className='w-full h-[80vh] rounded-lg'
+														title={pdf.title || `PDF ${index + 1}`}
+														loading='lazy'
+													></iframe>
+													<div className='mt-2 flex justify-end gap-2'>
+														<a href={pdf.url} target='_blank' rel='noreferrer' className='text-sm text-gray-300 underline'>Open original</a>
+														<a href={pdf.url} download className='text-sm text-gray-300 underline'>Download</a>
+													</div>
+												</motion.div>
+											</motion.div>
+										)}
+									</div>
+								);
+							})}
+						</div>
+					</div>
+				)}
 
 				{/* --- Image Gallery Section (Modal remains) --- */}
 				{project.images && project.images.length > 0 && (

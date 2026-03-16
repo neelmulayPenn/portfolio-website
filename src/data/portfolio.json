@@ -124,32 +124,44 @@
 	"projects": [
 		{
 			"title": "Robot Battle Arena",
-			"description": "Developed a versatile robot capable of operating in various modes including manual control, autonomous wall-following, and attack mode, highlighting adaptability in robotics programming and system design.",
+			"description": "Built an autonomous combat robot with servos, motors and 3D printed parts.",
 			"image": "/project-covers/robot-battle-arena.png",
 			"tags": ["ESP32C3", "TOF Sensors", "I2C", "C++"]
 		},
 		{
 			"title": "F1/10 Autonomous Racing",
 			"image": "/project-covers/autonomous-racing.png",
-			"description": "Developing and optimizing an autonomous 1:10 scale Formula 1 race car using ROS2 and state-of-the-art autonomous driving techniques.",
+			"description": "Full autonomy stack with SLAM, MPPI, and Pure Pursuit. Podium finish in race.",
 			"tags": ["ROS2", "Python", "SLAM"]
+		},
+		{
+			"title": "Autonomous Search and Rescue",
+			"image": "/project-covers/search.png",
+			"description": "Built a real-time autonomous navigation and human detection system.",
+			"tags": ["MPPI", "YoloV8", "SLAM"]
+		},
+		{
+			"title": "Semantic Segmentation for Autonomous Driving",
+			"image": "/project-covers/semseg.png",
+			"description": "Implemented and Compared UNet and SegFormer architectures",
+			"tags": ["Computer Vision", "Autonomous Vehicles", "Deep Learning", "Perception"]
 		},
 		{
 			"title": "Pick and Place with Robot Arm",
 			"image": "/project-covers/pick-and-place.png",
-			"description": "Implemented inverse kinematics algorithms for precise control of a robotic arm, enabling accurate block detection, pick-up, and stacking in both static and dynamic environments.",
-			"tags": ["Python", "Kinematics", "Motion Planning"]
+			"description": "Vision-guided pick-and-place on a 7-DOF arm using FK, IK",
+			"tags": ["Computer Vision", "Kinematics", "Motion Planning"]
 		},
 		{
 			"title": "Multi-Agent Drone Formation Control",
 			"image": "/project-covers/Distributed-robotics.png",
-			"description": "Built a controller to mantain a formation-control in a distributed manner",
+			"description": "Decentralized formation controller for multi-drone swarms",
 			"tags": ["Drones", "Distributed Robotics", "Formation Control"]
 		},
 		{
 			"title": "Fast Car",
 			"image": "/project-covers/fastcar.png",
-			"description": "Constructed a robot using MDF panel base with DC motors, integrated encoders, and wheels with a WiFi-based control system.",
+			"description": "Ground robot with encoder-feedback DC motor control and WiFi teleoperation.",
 			"tags": ["C++", "ESP32C3", "Control Systems"]
 		},
 		{
@@ -161,19 +173,19 @@
 		{
 			"title": "Sensors Lab",
 			"image": "/project-covers/sensors.png",
-			"description": "Designed and implemented various digital logic and sensing systems, showcasing skills in microcontroller programming, circuit design, and signal processing.",
-			"tags": ["ATmega32U4", "Circuit Design"]
+			"description": "3-DOF interactive mechatronic device with ADC-based potentiometer input and PWM output.",
+			"tags": ["ATmega32U4", "Circuit Design","Signal Processing"]
 		},
 		{
 			"title": "Trajectory Optimization for 7-DOF Arm",
 			"image": "/project-covers/trajectory-op.png",
-			"description": "Implemented and compared two path planning algorithms for a robotic arm: Rapidly-exploring Random Trees (RRT) and Potential Field methods.",
-			"tags": ["Python", "Motion Planning", "Optimization"]
+			"description": "Compared RRT and Potential Field planners for collision-free trajectory generation.",
+			"tags": ["RRT", "Motion Planning", "Optimization"]
 		},
 		{
 			"title": "Characterization of NiTi wires",
 			"image": "/project-covers/niti.png",
-			"description": "Conducted an in-depth study on the thermomechanical properties of Nickel-Titanium (NiTi) shape memory alloy wires for actuator applications.",
+			"description": "Thermomechanical characterization of NiTi SMA wires to evaluate actuation performance.",
 			"tags": [
 				"Material Testing",
 				"Microstructure Analysis",
