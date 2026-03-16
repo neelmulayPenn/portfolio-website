@@ -1,7 +1,7 @@
 {
 	"personalInfo": {
 		"name": "NEEL MULAY",
-		"title": "MS Mechanical Engineering graduate student with expertise in robotics, mechatronics, and multidisciplinary problem-solving",
+		"title": "Mechatronics & Robotics graduate student with expertise in autonomous robots, mechanical design, and multidisciplinary problem-solving",
 		"image": "/profile.png"
 	},
 	"contactInfo": {
@@ -21,13 +21,13 @@
 	"name": "Neel Mulay",
 	"education": [
 		{
-			"degree": "MS in Mechanical Engineering (Robotics Concentration)",
+			"degree": "MS Mechatronics and Robotics",
 			"school": "University of Pennsylvania",
 			"year": "2024-2026",
-			"description": "I thrive in fast-paced, collaborative environments, leveraging my leadership skills and technical expertise to drive innovation. My diverse skill set and passion for innovation in robotics and mechatronics position me as a valuable asset for cutting-edge research and development in advanced robotics, smart materials and mechanical systems."
+			"description": " neel"
 		},
 		{
-			"degree": "BE in Mechanical Engineering",
+			"degree": "BE Mechanical Engineering",
 			"school": "Birla Institute of Technology and Science, Pilani",
 			"year": "2020-2024",
 			"description": "Focus on mechanical design and robotics"
@@ -37,7 +37,7 @@
 		{
 			"title": "Robotics Software Engineering Intern",
 			"company": "ST Engineering, Aethon",
-			"period": "Jun 2025 - Present",
+			"period": "Jun 2025 - Dec 2025",
 			"location": "Pittsburgh, PA, USA",
 			"description": "Developing software for autonomous mobile robots"
 		},
@@ -67,25 +67,32 @@
 	"skillsCarousel": [
 		"Python",
 		"ROS2",
-		"Arduino",
-		"CAD",
-		"Rapid Prototyping",
-		"Motors",
-		"Sensors",
-		"PCB"
+		"C++",
+		"SLAM",
+		"Localization",
+		"Optimal Control",
+		"RL",
+		"Sensor Fusion",
+		"Motion Planning"
 	],
 	"skills": {
-		"Software": [
-			"Python",
-			"ROS2",
-			"C++",
-			"MATLAB",
-			"Gazebo",
-			"C",
-			"Arduino",
-			"PLC"
-		],
-		"Design & Analysis": [
+		"Robotics & Autonomy": [
+        "ROS2 (C++/Python)",
+        "Motion Planning (MPC, MPPI, RRT, A*)",
+        "SLAM & Localization (AMCL, EKF, UKF, VIO)",
+        "LiDAR, IMU, Depth Camera Fusion",
+        "Sim2Real (Gazebo, Isaac Sim, RViz)",
+        "Optimal Control (LQR, iLQR, MPC)",
+        "Trajectory Optimization",
+        "Autonomous Navigation"
+    ],
+	"Software & AI": [
+        "Python, C++, C, MATLAB",
+        "PyTorch (CNN, RNN, Transformers)",
+        "Computer Vision (YOLO, SegFormer, U-Net)",
+        "Linux, Git"
+    ],
+		"Design, Analysis & Hardware": [
 			"AutoCAD",
 			"Fusion 360",
 			"PTC Creo",
@@ -93,7 +100,12 @@
 			"SolidWorks",
 			"DFM, DFA & CFD",
 			"COMSOL",
-			"Thermal Management"
+			"Thermal Management",
+			"ESP32C3",
+			"ATmega32U4",
+			"Servo Motor",
+			"TOF Sensor",
+			"DC Motor"
 		],
 		"Laboratory": [
 			"Material Testing, Tensile Tests",
@@ -106,14 +118,8 @@
 			"Drill Press, Lathe",
 			"Casting, Sheet Metal Processes",
 			"Prototyping, Rapid Prototype"
-		],
-		"Hardware Skills": [
-			"ESP32C3",
-			"ATmega32U4",
-			"Servo Motor",
-			"TOF Sensor",
-			"DC Motor"
 		]
+		
 	},
 	"projects": [
 		{
@@ -136,7 +142,7 @@
 		},
 		{
 			"title": "Multi-Agent Drone Formation Control",
-			"image": "/project-covers/distributed-robotics.png",
+			"image": "/project-covers/Distributed-robotics.png",
 			"description": "Built a controller to mantain a formation-control in a distributed manner",
 			"tags": ["Drones", "Distributed Robotics", "Formation Control"]
 		},

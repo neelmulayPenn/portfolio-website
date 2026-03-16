@@ -38,7 +38,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
 								<div className='w-1 h-16 bg-blue-400 mr-4 flex-shrink-0'></div>
 								<div>
 									<h4 className='text-xl font-semibold'>
-										MS in Mechanical Engineering
+										MS Mechatronics & Robotics
 									</h4>
 									<p className='text-gray-400'>
 										2026, University of Pennsylvania
@@ -52,7 +52,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
 								<div className='w-1 h-16 bg-blue-400 mr-4 flex-shrink-0'></div>
 								<div>
 									<h4 className='text-xl font-semibold'>
-										BE in Mechanical Engineering
+										BE Mechanical Engineering
 									</h4>
 									<p className='text-gray-400'>
 										2024, Birla Institute of Technology and
@@ -63,14 +63,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
 						</div>
 
 						<p className='text-gray-300 mt-6'>
-							I thrive in fast-paced, collaborative environments,
-							leveraging my leadership skills and technical
-							expertise to drive projects to successful
-							completion. My diverse skill set and passion for
-							innovation in robotics and mechatronics position me
-							as a valuable asset for cutting-edge research and
-							development in advanced robotics, smart materials
-							and mechanical systems.
+							I'm a full-stack roboticist with hands-on experience across the entire stack — from embedded firmware and hardware integration to autonomy algorithms, SLAM, and production-grade deployment. I'm drawn to problems where robots need to work reliably in unstructured, real-world environments, and I care deeply about building systems that are safe, testable, and ready for deployment at scale.
 						</p>
 					</motion.div>
 
@@ -102,14 +95,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
 						<div className='flex items-center mb-2'>
 							<div className='text-2xl mr-2'>💡</div>
 							<h3 className='text-xl font-semibold'>
-								Innovation
+								First-principles Thinker
 							</h3>
 						</div>
 						<div className='w-24 h-1 bg-green-400 mb-4'></div>
 						<p className='text-gray-300 text-sm'>
-							Passionate about creating innovative solutions that
-							combine mechanical engineering principles with
-							modern technologies.
+							I love breaking hard problems down to their fundamentals — whether it's debugging a mislocalization in a hospital corridor or modeling sensor noise from scratch. I do my best work collaborating closely with a team.
 						</p>
 					</motion.div>
 
@@ -123,14 +114,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
 						<div className='flex items-center mb-2'>
 							<div className='text-2xl mr-2'>💡</div>
 							<h3 className='text-xl font-semibold'>
-								Technical Skills
+								Full-stack Robotics
 							</h3>
 						</div>
 						<div className='w-24 h-1 bg-green-400 mb-4'></div>
 						<p className='text-gray-300 text-sm'>
-							Expert at integrating mechatronic components to
-							build robotic systems, with strong skills in design,
-							control, and autonomy.
+							Experienced across the full robotics stack — from SLAM, localization, and motion planning to embedded firmware, sensor fusion, and hardware integration.
 						</p>
 					</motion.div>
 
@@ -144,15 +133,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
 						<div className='flex items-center mb-2'>
 							<div className='text-2xl mr-2'>💡</div>
 							<h3 className='text-xl font-semibold'>
-								Leadership
+								Deployment Mindset
 							</h3>
 						</div>
 						<div className='w-24 h-1 bg-green-400 mb-4'></div>
 						<p className='text-gray-300 text-sm'>
-							I lead teams in implementing innovative
-							technologies, focusing on clear communication and
-							problem-solving to drive success and foster
-							continuous learning.
+							I build systems with production in mind — writing testable, modular autonomy software, validating through Sim2Real pipelines, and tuning for robustness across heterogeneous robot fleets.
 						</p>
 					</motion.div>
 				</div>

@@ -73,12 +73,13 @@ const Header = () => {
   };
 
   const menuItems = [
-		'HOME',
-		'ABOUT ME',
-		'EXPERIENCE',
-		'SKILLS',
-		'PROJECTS',
-		'GET IN TOUCH',
+    'HOME',
+    'ABOUT ME',
+    'EXPERIENCE',
+    'RESEARCH',
+    'SKILLS',
+    'PROJECTS',
+    'GET IN TOUCH',
 	];
 
 

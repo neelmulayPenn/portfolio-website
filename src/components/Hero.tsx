@@ -65,16 +65,17 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
 						>
 							<div className='flex justify-between items-center'>
 								<div>
-									<p className='text-xs text-green-400'>
-										{mainEducation.degree.split(' in ')[0]}
-									</p>
-									<p className='text-xs text-green-400'>
-										{mainEducation.degree.split(' in ')[1]},
-									</p>
-									<p className='text-sm font-bold'>
-										{mainEducation.school}
-									</p>
-								</div>
+																{(() => {
+																	const parts = mainEducation.degree.split(' in ');
+																	return (
+																		<>
+																			<p className='text-xs text-green-400'>{parts[0]}</p>
+																			{parts[1] && <p className='text-xs text-green-400'>{parts[1]},</p>}
+																			<p className='text-sm font-bold'>{mainEducation.school}</p>
+																		</>
+																	);
+																})()}
+															</div>
 								<div className='ml-2'>
 									<svg
 										width='24'

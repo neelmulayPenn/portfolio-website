@@ -14,6 +14,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Footer from './components/Footer';
+import Research from './components/Research';
+import ResearchDetail from './components/ResearchDetail';
 
 const AnimatedRoutes = () => {
 	const location = useLocation();
@@ -36,10 +38,25 @@ const AnimatedRoutes = () => {
 							<Experience id='experience' />
 							<Skills id='skills' />
 							<Projects id='projects' />
+							<Research id='research' />
 							<Footer id='getintouch' />
 						</motion.div>
 					}
 				/>
+					<Route
+						path='/research/:id'
+						element={
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ duration: 0.5 }}
+							>
+								<Header />
+								<ResearchDetail />
+							</motion.div>
+						}
+					/>
 				<Route
 					path='/project/:id'
 					element={

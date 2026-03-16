@@ -1,0 +1,65 @@
+{
+  "research": [
+    {
+      "title": "Multi-Robot Soft Underwater Swimmers",
+      "description": "Built modular jet-propelled robots inspired by salps",
+      "image": "/project-covers/soft_robot.png",
+      "tags": ["Actuators", "Soft Robotics", "Characterization"],
+      "images": [
+        "/project-covers/soft_robot.png",
+        "/project-covers/multi_robot_buoy.png",
+        "/project-covers/velocity_plots.png"
+
+      ],
+      "videos": [
+        { "caption": "Two-SALP System Swimming Underwater", "link": "https://www.youtube.com/watch?v=0D7ZQcqw7Gg&list=PLmM-rbrIwkWXZ1TrxIWAi3dpsPb_QgWgj&index=1" },
+        { "caption": "Two-SALP System Swimming with Phase Offset", "link": "https://www.youtube.com/watch?v=akg_KSr3rl8&list=PLmM-rbrIwkWXZ1TrxIWAi3dpsPb_QgWgj&index=4" },
+        { "caption": "Two-SALP System Swimming with Phase Offset", "link": "https://www.youtube.com/watch?v=bDJGkhF7XI0&list=PLmM-rbrIwkWXZ1TrxIWAi3dpsPb_QgWgj&index=6" },
+        { "caption": "Close up of Multi-SALP swimming", "link": "https://youtube.com/shorts/3Vp8pnOsPBU"}
+        
+      ],
+      "links": [
+        { "caption": "Coupled jet coordination and physical arrangement in salp-inspired multi-robot swimming, published in Bioinspiration & Bioinformatics (2025)", "link": "https://iopscience.iop.org/article/10.1088/1748-3190/ae1396" }
+      ],
+      "achievements": [
+        "We have optimized the jetting robot design to enable higher thrust and lower drag. The SALP robot is now modular in the sense that the robots can be manually attached to each other in different physical arrangements to study the effect of multi-robot interactions on locomotion performance. Physically connected SALP chains coordinate their jets to achieve various propulsion modes. We are interested in investigating how physical arrangement and jet coordination between two robots affect the swimming performance and energy efficiency of a two-SALP robotic system. We aim to gain insights into the potential hydrodynamic benefits of multi-jet propulsion by exploring how different coordination strategies influence the surrounding flow environment.",
+        "Developed the SALP (Salp-inspired Approach to Low-energy Propulsion) system — a modular, soft-bodied jet-propelled underwater robot inspired by salp colonies, capable of physically connecting multiple units into coordinated multi-robot chains with controllable spatial arrangement and jet phase offsets.",
+        "Demonstrated that a two-SALP system, when optimally coordinated, achieves 15.7% higher swimming speed and 11.3% lower cost of transport than a single robot, with asynchronous jetting producing up to 14.9% lower cost of transport than synchronous jetting.",
+        "Implemented and validated a leader–follower control architecture enabling precise coordination of propulsion cycles between physically connected SALP robots, supporting systematic experiments across synchronous, asynchronous, and intermediate jetting modes.",
+        "Designed and conducted free-swimming experiments using OptiTrack motion capture and onboard power sensing to characterize velocity, power consumption, and propulsion efficiency across eight physical and control configurations.",
+        "Applied particle image velocimetry (PIV) to reveal that vortex ring spatial arrangement critically governs propulsion efficiency — in-series arrangements generated 2.6× more combined fluid impulse than parallel arrangements, explaining performance differences between coordinated swimming modes."
+        ],
+
+      "skills": ["Experimentation", "Leader-follower control", "Embedded Systems","Data Analysis", "Hardware Testing", "CAD", "Debugging" ]
+    },
+
+
+    {
+      "title": "Bidirectional Jet Propelled Swimmer",
+      "description": "Developed a salp-inspired soft underwater robot with actively controlled front and rear valves for bidirectional propulsion.",
+      "image": "/project-covers/chris_valve.png",
+      "tags": ["Actuators", "Soft Robotics", "Characterization"],
+      "images": [
+        "/project-covers/chris_valve1.png",
+        "/project-covers/result2.png",
+        "/project-covers/result1.png"
+      ],
+      
+      "links": [
+        { "caption": "Salp-Inspired Bidirectional Jet Propulsion Swimmer with Self-Sensing, ICRA 2025", "link": "https://drive.google.com/file/d/1i7F6-Jl_XW79AKC1ApHbderI8NKXYv0i/view" }
+      ],
+      "achievements": [
+    "Extended the SALP soft underwater robot platform by designing and integrating active solenoid-actuated valves at both ends of the robot, enabling active control of water flow direction for bidirectional jet propulsion.",
+    "Designed a novel bistable electromagnetic valve using laser-cut acrylic solenoids and hybrid ferrite-magnetic plungers, enabling low-power actuation, waterproof integration, and dual-mode sensing via inductance and induced EMF.",
+    "Demonstrated bidirectional swimming and mid-cycle directional switching by selectively controlling front and rear valve states, achieving both forward and backward locomotion without redesigning the core robot body.",
+    "Validated inductance-based self-sensing for reliable valve state detection and showed that induced EMF captures transient valve transitions, enabling sensorless onboard state estimation without external sensors.",
+    "Demonstrated that a passive robot can detect a neighboring robot's jet propulsion events through induced EMF alone, with signal magnitude and timing encoding inter-robot distance — laying groundwork for decentralized, communication-free multi-robot coordination."
+    ],
+      "skills": ["Experimentation", "Data Analysis", "Electromagnetic Actuator Design",
+    "Embedded Systems & Sensing",
+    "Inductance & EMF-Based Self-Sensing",
+    "Underwater Experimentation",
+    "Hardware Testing & Debugging"]
+    }
+  ]
+}
