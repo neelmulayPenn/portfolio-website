@@ -141,6 +141,12 @@
 			"tags": ["MPPI", "YoloV8", "SLAM"]
 		},
 		{
+			"title": "Drone Racing using RL",
+			"image": "/project-covers/drone_racing.png",
+			"description": "Trained a drone racing policy in Isaac Lab, with <30s finish.",
+			"tags": ["Deep RL", "Sim2Real", "PPO", "Quadcopters"]
+		},
+		{
 			"title": "Semantic Segmentation for Autonomous Driving",
 			"image": "/project-covers/semseg.png",
 			"description": "Implemented and Compared UNet and SegFormer architectures",

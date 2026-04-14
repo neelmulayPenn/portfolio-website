@@ -138,6 +138,39 @@
 
 		},
 		{
+			"title": "Drone Racing using RL",
+			"description": "Trained a PPO policy in NVIDIA Isaac Lab to fly a quadcopter through a 7-gate race circuit, developing a full reward shaping pipeline, gate-crossing detection system, and domain randomization curriculum from scratch.",
+			"videos": [
+				{
+					"caption": "The final policy flying through the course",
+					"link": "https://youtu.be/eaZFxKZFcs4"
+				},
+				{
+					"caption": "Training the policy in Isaac Lab",
+					"link": "https://youtu.be/BO5wer7-F4s"
+				}
+			],
+			"images": [],
+
+			  "skills": [
+				"Reinforcement Learning (PPO)",
+				"NVIDIA Isaac Lab / Isaac Sim",
+				"Reward Shaping & Curriculum Design",
+				"Domain Randomization",
+				"Sim2Real Transfer",
+				"PyTorch",
+				"Quadcopter Dynamics",
+				"Custom Environment Design"
+			],
+			"achievements": [
+				"Designed a 27-dimensional world-frame observation space for a quadcopter racing agent — iterating from gate/body-frame encodings to world-frame gate-relative vectors (prev, current, next gate + approach normal + sin/cos lap phase), a switch that was the single most impactful improvement to training stability.",
+    			"Built a direction-enforced gate crossing detector that simultaneously tracks all gates per timestep, checking sign-flip of the drone's x-coordinate in each gate frame within bounds — correctly penalizing wrong-gate and wrong-direction crossings that the naive single-gate check allowed the policy to exploit.",
+    			"Designed and debugged a multi-term reward function through ~6 major iterations: identified and fixed a progress reward spike on crossing steps (distance computed against new gate vs. old baseline), a two-sided gate double-penalty bug, and an uninitialized prev_x reset bug — each of which silently degraded training.",
+   	 			"Implemented a linear domain randomization curriculum over aerodynamic drag, thrust-to-weight ratio, and attitude PID gains — ramping randomization range from zero to full over a configurable iteration window so the policy learns gate traversal under stable dynamics before generalizing.",
+    			"Achieved consistent 7-gate lap completion including correct traversal of a reverse-approach gate (Gate 3), after systematically isolating reward, observation, and reset bugs that had kept the policy stuck hovering in front of gates for several days of iteration."]
+
+		},
+		{
 			"title": "Semantic Segmentation for Autonomous Driving",
 			"description": "Implemented and compared CNN and transformer-based semantic segmentation architectures on urban driving scenes, evaluating trade-offs between model complexity, class imbalance handling, and real-world perception performance.",
 			
