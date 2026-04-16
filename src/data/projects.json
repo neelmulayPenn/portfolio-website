@@ -207,6 +207,37 @@
 			]
 		},
 		{
+			"title": "Neural Radiance Field (NeRF) for 3D Scene Reconstruction",
+    		"description": "Implemented a simplified NeRF pipeline from scratch, training a neural network to represent a 3D scene as a continuous volumetric radiance field and synthesize novel viewpoints from a sparse set of input images.",	
+			
+			"images": [
+				"https://drive.google.com/file/d/1S7pTm1mGxuc--mGG-Va9bGl-UsrDR-xb/view?usp=sharing",
+				"https://drive.google.com/file/d/1FiMg7x_oJkd6YByUu7djzCobmf0nHOSz/view?usp=sharing",
+				"https://drive.google.com/file/d/1dQeluz4aXor38fH0-FUEMWd5VBDL2iH0/view?usp=sharing",
+				"https://drive.google.com/file/d/1I9zvqVSqtaY7edIkjmuBJSzYPAY1q9ME/view?usp=sharing"
+			],
+			
+			"skills": [
+				"PyTorch (Custom MLP, Volume Rendering)",
+				"Neural Radiance Fields (NeRF)",
+				"3D Computer Vision",
+				"COLMAP Structure-from-Motion",
+				"Ray Casting & Sampling",
+				"Positional Encoding",
+				"Camera Calibration & Pose Estimation",
+				"Python, GPU Training (Google Colab L4)"
+			],
+			"achievements": [
+				"Project: https://github.com/neelmulayPenn/NeRF_NeelMulay",
+				"Implemented the full NeRF pipeline from scratch in PyTorch including ray generation, stratified depth sampling, sinusoidal positional encoding, and differentiable volume rendering with alpha compositing, training end-to-end on 100 LEGO images captured from diverse viewpoints.",
+				"Ran COLMAP structure-from-motion to estimate camera intrinsics and extrinsics from raw images, successfully registering 99/100 cameras into a sparse 3D reconstruction, then converted poses to the NeRF coordinate convention using colmap2nerf.",
+				"Implemented volume rendering from first principles using the physically-based transmittance model — computing per-sample opacity, cumulative transmittance, and weighted color compositing — enabling differentiable gradient flow through the entire rendering pipeline.",
+				"Trained a 4-layer MLP with 128 hidden dimensions and 63-dimensional positional encoding on a Google Colab L4 GPU for 5000 iterations, reducing MSE loss from 0.18 to 0.004 and producing recognizable novel view synthesis of the LEGO bulldozer from multiple viewpoints.",
+				"Analyzed failure modes including depth sampling range mismatches at extreme viewing angles and blurring from the simplified view-independent radiance model, identifying hierarchical sampling and view-dependent color as key extensions needed for production-quality NeRF."
+			]
+		
+		},
+		{
 			"title": "Pick and Place with Robot Arm",
 			"description": "Implemented inverse kinematics algorithms for precise control of a 7-DOF robotic arm, enabling accurate block detection, pick-up, and stacking in both static and dynamic environments.",
 			"videos": [

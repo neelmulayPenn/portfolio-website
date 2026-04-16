@@ -153,6 +153,12 @@
 			"tags": ["Computer Vision", "Autonomous Vehicles", "Deep Learning", "Perception"]
 		},
 		{
+			"title": "Neural Radiance Field (NeRF) for 3D Scene Reconstruction",
+			"image": "/project-covers/five_poses.png",
+			"description": "Implemented TinyNeRF from scratch with COLMAP camera pose estimation",
+			"tags": ["3D Vision", "Neural Rendering", "Deep Learning", "Computer Vision"]
+		},
+		{
 			"title": "Pick and Place with Robot Arm",
 			"image": "/project-covers/pick-and-place.png",
 			"description": "Vision-guided pick-and-place on a 7-DOF arm using FK, IK",
