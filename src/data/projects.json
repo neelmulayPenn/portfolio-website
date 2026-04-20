@@ -193,7 +193,7 @@
 				"Python, GPU Training (Google Colab)"
 			],
 			"achievements": [
-				"Project: ",
+				"Project: https://github.com/neelmulayPenn/Semantic-Segmentation",
 				"Implemented a U-Net architecture from scratch in PyTorch with a symmetric encoder-decoder design, Group Normalization, skip connections, and Dice loss to handle class imbalance, training end-to-end on the Cityscapes urban driving dataset for 50 epochs achieving 28% mIoU.",
 				"Built a custom PyTorch dataset wrapper with synchronized image-mask augmentation pipelines using Albumentations, including Gaussian noise, brightness/contrast variation, and horizontal flipping to simulate real-world sensor and lighting variability.",
 				"Fine-tuned a pretrained SegFormer-B1 transformer model on Cityscapes by freezing the hierarchical encoder and retraining only the MLP decoder with AdamW and weighted cross-entropy loss, boosting mIoU from 55% to 65% and significantly improving segmentation of safety-critical classes like pedestrians, traffic signs, and poles.",
@@ -320,6 +320,34 @@
 					"title": "Vehicle Lane Change with MPC",
 					"url": "https://drive.google.com/file/d/1q88Fk8qyycNehOhw9gN9SDWQ0ZE-C12L/view?usp=sharing"
 				}
+			]
+		},
+		{
+			"title": "Unscented Kalman Filter for Quadrotor state estimation",
+			"description": "Implemented a quaternion-based Unscented Kalman Filter for 3D attitude estimation of a quadrotor (roll, pitch, yaw) from raw IMU data, with Vicon motion capture as ground truth.",
+
+			"images": [
+				"https://drive.google.com/file/d/1XRPMb1b8EIQ5M498BGFRtTQCBUw8HSYp/view?usp=sharing",
+				"https://drive.google.com/file/d/1wN7cObHhIbIpuwVdqOXvx_uo2Oso5SSC/view?usp=sharing",
+				"https://drive.google.com/file/d/1pD8QcuWR4JG5k2RXmPCzHBXCoW3PXbGU/view?usp=sharing"
+			],
+
+			"skills": [
+				"Unscented Kalman Filter (UKF)",
+				"Quaternions",
+				"IMU Sensor Fusion",
+				"Sensor Calibration & Debiasing",
+				"State Estimation",
+				"NumPy / SciPy",
+				"Python"
+			],
+
+			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Unscented-Kalman-Filter",
+				"Implemented a quaternion-manifold UKF for real-time 3D attitude estimation on a quadrotor IMU, representing orientation uncertainty in a 6D tangent space (axis-angle + angular velocity) and propagating 12 sigma points through nonlinear quaternion kinematics — avoiding the gimbal lock and singularities of Euler-angle filters.",
+				"Built the full sensor fusion pipeline from raw IMU to Euler angle output: offline Vicon-referenced bias calibration (gyro bias ~5–6 rad/s, accel bias ~±45 m/s²) using finite-difference angular rates and low-motion masking, feeding debiased measurements into the UKF observation model at runtime.",
+				"Engineered the manifold-consistent measurement update: gravity rotated into body frame via quaternion sandwich product, state-measurement cross-covariance computed across all sigma points, and Kalman correction applied as quaternion left-multiplication — keeping the state estimate on SO(3) throughout.",
+				"Validated against Vicon ground truth: strong roll/pitch tracking through ±0.75 rad dynamic maneuvers with minimal phase lag; diagnosed yaw drift as a fundamental gravity-only observability gap and suppressed spurious yaw coupling by inflating the accelerometer z-axis noise term."
 			]
 		},
 		{

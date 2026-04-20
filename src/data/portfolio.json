@@ -37,9 +37,10 @@
 		{
 			"title": "Robotics Software Engineering Intern",
 			"company": "ST Engineering, Aethon",
+			"website": "https://aethon.com/",
 			"period": "Jun 2025 - Dec 2025",
 			"location": "Pittsburgh, PA, USA",
-			"description": "Developing software for autonomous mobile robots"
+			"description": "Developing localization software for autonomous mobile robots"
 		},
 		{
 			"title": "Graduate Research Assistant",
@@ -169,6 +170,12 @@
 			"image": "/project-covers/vehicle_lane_change.png",
 			"description": "Full-stack autonomous driving lane change framework with behavior planning, trajectory generation, and linearized MPC",
 			"tags": ["Motion Planning", "MPC", "Vehicle Dynamics", "Autonomous Driving", "Python"]
+		},
+		{
+			"title": "Unscented Kalman Filter for Quadrotor state estimation",
+			"image": "/project-covers/roll.png",
+			"description": "UKF for 3D attitude estimation on a quadrotor IMU, with Vicon-referenced sensor calibration",
+    		"tags": ["State Estimation", "Sensor Fusion", "Kalman Filtering", "IMU", "Python"]
 		},
 		{
 			"title": "Pick and Place with Robot Arm",
