@@ -193,6 +193,7 @@
 				"Python, GPU Training (Google Colab)"
 			],
 			"achievements": [
+				"Project: ",
 				"Implemented a U-Net architecture from scratch in PyTorch with a symmetric encoder-decoder design, Group Normalization, skip connections, and Dice loss to handle class imbalance, training end-to-end on the Cityscapes urban driving dataset for 50 epochs achieving 28% mIoU.",
 				"Built a custom PyTorch dataset wrapper with synchronized image-mask augmentation pipelines using Albumentations, including Gaussian noise, brightness/contrast variation, and horizontal flipping to simulate real-world sensor and lighting variability.",
 				"Fine-tuned a pretrained SegFormer-B1 transformer model on Cityscapes by freezing the hierarchical encoder and retraining only the MLP decoder with AdamW and weighted cross-entropy loss, boosting mIoU from 55% to 65% and significantly improving segmentation of safety-critical classes like pedestrians, traffic signs, and poles.",
@@ -228,7 +229,7 @@
 				"Python, GPU Training (Google Colab L4)"
 			],
 			"achievements": [
-				"Project: https://github.com/neelmulayPenn/NeRF_NeelMulay",
+				"Project: https://github.com/neelmulayPenn/TinyNeRF",
 				"Implemented the full NeRF pipeline from scratch in PyTorch including ray generation, stratified depth sampling, sinusoidal positional encoding, and differentiable volume rendering with alpha compositing, training end-to-end on 100 LEGO images captured from diverse viewpoints.",
 				"Ran COLMAP structure-from-motion to estimate camera intrinsics and extrinsics from raw images, successfully registering 99/100 cameras into a sparse 3D reconstruction, then converted poses to the NeRF coordinate convention using colmap2nerf.",
 				"Implemented volume rendering from first principles using the physically-based transmittance model — computing per-sample opacity, cumulative transmittance, and weighted color compositing — enabling differentiable gradient flow through the entire rendering pipeline.",
@@ -236,6 +237,51 @@
 				"Analyzed failure modes including depth sampling range mismatches at extreme viewing angles and blurring from the simplified view-independent radiance model, identifying hierarchical sampling and view-dependent color as key extensions needed for production-quality NeRF."
 			]
 		
+		},
+		{
+			"title": "Vehicle Lane Change with MPC",
+			"description": "Built a full-stack autonomous driving framework for structured road environments, integrating a 6-state dynamic bicycle model, hierarchical behavior planning with TTC-based lane-change logic, quintic trajectory generation, and linearized Model Predictive Control solved with Drake + SNOPT. Validated across 5 traffic scenarios including overtaking, highway merge, and 4-way intersection navigation.",
+			"videos": [
+				{
+					"caption": "Vehicle Lane Change due to a stalled vehicle in the lane",
+					"link": "https://youtu.be/2tIl_Q0E-eA"
+				},
+				{
+					"caption": "Vehicle Lane Change: Merging into a highway",
+					"link": "https://youtu.be/6_Sgbar24Vk"
+				}
+			],
+
+			"images": [
+				"https://drive.google.com/file/d/1fdpnAJO3gwT93QIbu8xDKvEbyAbhjUXO/view?usp=sharing"
+			],
+
+
+			"skills": [
+				"Model Predictive Control (MPC)",
+				"Drake + SNOPT (Constrained Optimization)",
+				"Vehicle Dynamics (Bicycle Model)",
+				"Hierarchical Motion Planning",
+				"Trajectory Generation (Quintic Polynomials)",
+				"Behavior Planning (FSM, TTC, Hysteresis)",
+				"Perception Modeling (Noisy, Asynchronous)",
+				"Python, NumPy, SciPy, Matplotlib"
+			],
+
+			"achievements": [
+				"Project: https://github.com/neelmulayPenn/VehicleLaneChange",
+				"Implemented a 6-state dynamic bicycle model (X, Y, ψ, vx, vy, ω) with front/rear slip-angle lateral forces, numerically linearized around reference operating points and Euler-discretized for use as the MPC prediction model — enabling both high-fidelity simulation rollout and tractable constrained optimization.",
+				"Designed a hierarchical behavior-trajectory-control stack: a finite-state behavior planner with TTC hazard detection, hysteresis, and cooldown logic feeds quintic C²-continuous lane-change profiles to a linearized MPC, decoupling behavioral decision-making from real-time trajectory optimization.",
+				"Formulated and solved a finite-horizon constrained QP at each timestep using Drake's MathematicalProgram + SNOPT (T=15, Δt=0.1s), with separate Q, Qf, R, and Rd weights penalizing tracking error, control effort, and control rate of change to enforce actuator smoothness.",
+				"Stress-tested the closed-loop stack under realistic perception conditions — 5 Hz asynchronous updates with Gaussian position noise — achieving a 96.7% success rate (29/30 trials) across 1–6 obstacle vehicles in straight-road overtake scenarios.",
+				"Identified and documented root-cause failure modes across 5 scenarios: gap persistence filtering needed for impassable traffic, curvature-aware feedforward required for curved roads, and a dedicated yield/stop primitive needed for intersection handling — all grounded in control-theoretic analysis."
+			],
+			"pdfs": [
+				{
+					"title": "Vehicle Lane Change with MPC",
+					"url": "https://drive.google.com/file/d/1q88Fk8qyycNehOhw9gN9SDWQ0ZE-C12L/view?usp=sharing"
+				}
+			]
 		},
 		{
 			"title": "Pick and Place with Robot Arm",

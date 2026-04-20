@@ -159,6 +159,12 @@
 			"tags": ["3D Vision", "Neural Rendering", "Deep Learning", "Computer Vision"]
 		},
 		{
+			"title": "Vehicle Lane Change with MPC",
+			"image": "/project-covers/vehicle_lane_change.png",
+			"description": "Full-stack autonomous driving lane change framework with behavior planning, trajectory generation, and linearized MPC",
+			"tags": ["Motion Planning", "MPC", "Vehicle Dynamics", "Autonomous Driving", "Python"]
+		},
+		{
 			"title": "Pick and Place with Robot Arm",
 			"image": "/project-covers/pick-and-place.png",
 			"description": "Vision-guided pick-and-place on a 7-DOF arm using FK, IK",
