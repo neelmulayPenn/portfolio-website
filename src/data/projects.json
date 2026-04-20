@@ -239,6 +239,45 @@
 		
 		},
 		{
+			"title": "Particle Filter SLAM",
+			"description": "Implemented a full 2D LiDAR SLAM pipeline from scratch using a particle filter and occupancy grid mapping, evaluated across four KITTI odometry sequences in Karlsruhe, Germany. The system simultaneously builds a top-down occupancy map and localizes the vehicle using only Velodyne LiDAR observations and noisy odometry-derived controls.",
+			
+			
+			"images": [
+				"https://drive.google.com/file/d/1O95dZWUaHvXyVfNAO1vuN70dbiU2gBxB/view?usp=sharing",
+				"https://drive.google.com/file/d/1OrLyhgMgrwucM40jhmYjy3JuHYYRoNUO/view?usp=sharing",
+				"https://drive.google.com/file/d/1_Xq4ZefJIxTqa_MSMSHHUHT85H60Ii-M/view?usp=sharing",
+				"https://drive.google.com/file/d/1lLlYE2LgSegIiSe4ygSHLbdZMwf-7Qk4/view?usp=sharing"
+			],
+			"videos": [
+				{
+					"caption": "Visualization of LiDAR points in dataset 2",
+					"link": "https://youtu.be/LxOXg-LoGHA"
+				}
+			],
+
+			"skills": [
+				"Particle Filter (Non-parametric Bayesian Inference)",
+				"Occupancy Grid Mapping (Log-Odds)",
+				"LiDAR Point Cloud Processing",
+				"SE(2) Rigid Body Transforms",
+				"Stratified Resampling",
+				"Coordinate Frame Reasoning",
+				"Numerically Stable Log-Space Inference",
+				"KITTI Dataset",
+				"Python, NumPy, Matplotlib"
+			],
+
+			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Particle-filter-SLAM",
+				"Implemented the full online SLAM loop from scratch — SE(2) motion model, LiDAR-to-world projection through calibration and particle pose transforms, log-space observation likelihood scoring against an occupancy grid, stratified resampling with effective sample size monitoring, and log-odds map updates — across four KITTI odometry sequences spanning urban, highway, and suburban environments.",
+				"Built the motion model using SE(2) pose composition: extracted relative controls from consecutive GPS/IMU poses via smart_minus_2d (rotating world-frame displacement into the robot's local frame), then propagated 50 particles forward with additive Gaussian noise (Q = diag(1e-4, 1e-4, 1e-5)) using smart_plus_2d, verified by matching particle trajectories to ground truth odometry with near-zero noise.",
+				"Implemented the observation model by chaining two coordinate transforms — calibration matrix Tr (Velodyne to camera frame) followed by a 4x4 Y-axis rotation built from each particle's [x, z, theta] state (camera to world frame) — then scoring each particle by summing binary map occupancy at projected LiDAR hit cells, with weights updated in log space using the log-sum-exp trick for numerical stability.",
+				"Designed the map update to use only the highest-weight particle at each timestep, keeping the occupancy grid sharp by avoiding blur from multi-particle updates. Log-odds are incremented by log(9) at occupied cells and clipped to [-5e6, +5e6], with the binary map thresholded at P(occupied) >= 0.6.",
+				"Produced clean occupancy maps and well-localized trajectories across all four datasets — particle filter trajectories closely match GPS/IMU ground truth on datasets 00-02, with visible but expected drift on the geometrically complex dataset 03 (multi-loop urban grid) due to the absence of loop closure correction."
+			]
+		},
+		{
 			"title": "Vehicle Lane Change with MPC",
 			"description": "Built a full-stack autonomous driving framework for structured road environments, integrating a 6-state dynamic bicycle model, hierarchical behavior planning with TTC-based lane-change logic, quintic trajectory generation, and linearized Model Predictive Control solved with Drake + SNOPT. Validated across 5 traffic scenarios including overtaking, highway merge, and 4-way intersection navigation.",
 			"videos": [

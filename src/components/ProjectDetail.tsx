@@ -128,6 +128,29 @@ const getGoogleDrivePdfPreviewUrl = (url: string): string => {
     return url;
 };
 
+const renderAchievementWithLinks = (text: string) => {
+	const urlRegex = /(https?:\/\/[^\s]+)/g;
+	const parts = text.split(urlRegex);
+
+	return parts.map((part, index) => {
+		if (/^https?:\/\/\S+$/.test(part)) {
+			return (
+				<a
+					key={`link-${index}`}
+					href={part}
+					target='_blank'
+					rel='noopener noreferrer'
+					className='text-blue-400 underline hover:text-blue-300 transition-colors'
+				>
+					{part}
+				</a>
+			);
+		}
+
+		return <span key={`text-${index}`}>{part}</span>;
+	});
+};
+
 // --- Project Detail Component ---
 
 const ProjectDetail = (): JSX.Element => {
@@ -652,7 +675,7 @@ const ProjectDetail = (): JSX.Element => {
 									key={index}
 									className='pl-2 text-lg leading-relaxed'
 								>
-									{achievement}
+									{renderAchievementWithLinks(achievement)}
 								</li>
 							))}
 						</ul>

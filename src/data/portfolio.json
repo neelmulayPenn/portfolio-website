@@ -159,6 +159,12 @@
 			"tags": ["3D Vision", "Neural Rendering", "Deep Learning", "Computer Vision"]
 		},
 		{
+			"title": "Particle Filter SLAM",
+			"image": "/project-covers/slam_03.jpg",
+			"description": "Built a full 2D LiDAR SLAM pipeline from scratch — particle filter localization, log-odds occupancy grid mapping, and SE(2) motion model, on KITTI dataset",
+			"tags": ["SLAM", "Particle Filter", "LiDAR", "Occupancy Grid Mapping", "Probabilistic Robotics", "Autonomous Vehicles"]
+		},
+		{
 			"title": "Vehicle Lane Change with MPC",
 			"image": "/project-covers/vehicle_lane_change.png",
 			"description": "Full-stack autonomous driving lane change framework with behavior planning, trajectory generation, and linearized MPC",
