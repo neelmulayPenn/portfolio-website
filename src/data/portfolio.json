@@ -178,6 +178,13 @@
     		"tags": ["State Estimation", "Sensor Fusion", "Kalman Filtering", "IMU", "Python"]
 		},
 		{
+			"title": "Vision Stack for Autonomous Racing",
+			"image": "/project-covers/f1tenth_vision.png",
+			"description": "End-to-end monocular perception pipeline for autonomous racing on NVIDIA Jetson",
+    		"tags": ["Computer Vision", "TensorRT", "NVIDIA Jetson", "Autonomous Racing"]
+
+		},
+		{
 			"title": "Pick and Place with Robot Arm",
 			"image": "/project-covers/pick-and-place.png",
 			"description": "Vision-guided pick-and-place on a 7-DOF arm using FK, IK",

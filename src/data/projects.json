@@ -37,6 +37,7 @@
 				"Control Systems"
 			],
 			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Autonomous-Racing-with-MPC",
 				"Microcontroller Programming and Integration: Demonstrated proficiency in programming and integrating multiple ESP32-C3 microcontrollers, implementing a master-client architecture using ESP-NOW protocol for efficient inter-processor communication",
 				"Sensor Integration and Control Systems: Developed and implemented autonomous navigation algorithms using Time-of-Flight (ToF) sensors and proportional control, showcasing skills in sensor integration and feedback control systems",
 				"Multi-Modal Robotics Design: Created a versatile robot capable of operating in various modes including manual control, autonomous wall-following, and attack mode, highlighting adaptability in robotics programming and system design",
@@ -91,6 +92,7 @@
 				"System Integration & Hardware Debugging"
 			],
 			"achievements": [
+			"Project: https://github.com/neelmulayPenn/Autonomous-Racing-with-MPC",
 			"Implemented real-time SLAM on an F1Tenth racecar using LiDAR and odometry to build accurate occupancy grid maps of indoor and outdoor race environments, then generated and logged waypoint trajectories for the car to follow autonomously at high speed.",
 			"Developed and tuned a Pure Pursuit controller for smooth high-speed waypoint tracking and implemented Autonomous Emergency Braking (AEB) using LiDAR scan thresholding to prevent collisions — validated in both simulation (Gazebo/RViz) and real-world track conditions.",
 			"Implemented and compared sampling-based motion planners including RRT for global path planning and MPPI for real-time reactive obstacle avoidance, evaluating trade-offs between planning horizon, compute cost, and collision safety on embedded hardware.",
@@ -163,6 +165,7 @@
 				"Custom Environment Design"
 			],
 			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Drone-Racing-RL",
 				"Designed a 27-dimensional world-frame observation space for a quadcopter racing agent — iterating from gate/body-frame encodings to world-frame gate-relative vectors (prev, current, next gate + approach normal + sin/cos lap phase), a switch that was the single most impactful improvement to training stability.",
     			"Built a direction-enforced gate crossing detector that simultaneously tracks all gates per timestep, checking sign-flip of the drone's x-coordinate in each gate frame within bounds — correctly penalizing wrong-gate and wrong-direction crossings that the naive single-gate check allowed the policy to exploit.",
     			"Designed and debugged a multi-term reward function through ~6 major iterations: identified and fixed a progress reward spike on crossing steps (distance computed against new gate vs. old baseline), a two-sided gate double-penalty bug, and an uninitialized prev_x reset bug — each of which silently degraded training.",
@@ -348,6 +351,30 @@
 				"Built the full sensor fusion pipeline from raw IMU to Euler angle output: offline Vicon-referenced bias calibration (gyro bias ~5–6 rad/s, accel bias ~±45 m/s²) using finite-difference angular rates and low-motion masking, feeding debiased measurements into the UKF observation model at runtime.",
 				"Engineered the manifold-consistent measurement update: gravity rotated into body frame via quaternion sandwich product, state-measurement cross-covariance computed across all sigma points, and Kalman correction applied as quaternion left-multiplication — keeping the state estimate on SO(3) throughout.",
 				"Validated against Vicon ground truth: strong roll/pitch tracking through ±0.75 rad dynamic maneuvers with minimal phase lag; diagnosed yaw drift as a fundamental gravity-only observability gap and suppressed spurious yaw coupling by inflating the accelerometer z-axis noise term."
+			]
+		},
+		{
+			"title": "Vision Stack for Autonomous Racing",
+			
+			"description": "End-to-end monocular perception pipeline for autonomous racing on NVIDIA Jetson — camera calibration, custom object detection, TensorRT deployment, and pixel-to-metric distance estimation integrated into a ROS2 package.",
+			
+			"skills": [
+				"Monocular Camera Calibration",
+				"Custom YOLO-style Object Detection (PyTorch)",
+				"TensorRT FP16/FP32 Deployment",
+				"Pixel-to-Metric Distance Estimation",
+				"ROS2 Package Integration",
+				"OpenCV / HSV Lane Detection",
+				"NVIDIA Jetson (Embedded Inference)",
+				"ONNX Export Pipeline"
+			],
+
+			"achievements": [
+				"Project: https://github.com/neelmulayPenn/F1Tenth-Vision-Perception",
+				"Built a full monocular perception pipeline from scratch: calibrated camera intrinsics from checkerboard data, solved camera mounting height from a known-distance cone, and implemented pixel-to-car-frame metric projection — converting detector output directly into (X, Y) coordinates usable by the planning stack.",
+				"Designed and trained a custom YOLO-style detector in PyTorch with a 5-channel grid output (confidence, center offsets, width, height), exported to ONNX and compiled to a TensorRT engine for deployment on NVIDIA Jetson at 1.356ms FP16 inference latency — a 2.05x speedup over FP32.",
+				"Integrated the full stack — camera capture at 960x540/60FPS, lane detection via HSV thresholding, TensorRT inference, bounding box post-processing, and distance projection — into a single ROS2 package deployed on the F1Tenth platform.",
+				"Validated end-to-end: unknown cone localized at (63.77 cm, 13.64 cm) from monocular geometry alone; integrated detection + projection pipeline output (33.20 cm, -5.61 cm), confirming metric accuracy suitable for downstream control."
 			]
 		},
 		{
