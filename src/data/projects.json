@@ -402,6 +402,7 @@
 				"Problem solving in complex environments"
 			],
 			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Robotics_7DOFarm",
 				"Advanced Robotic Manipulation: Implemented inverse kinematics (IK) algorithms for precise control of a robotic arm, enabling accurate block detection, pick-up, and stacking in both static and dynamic environments",
 				"Computer Vision Integration: Utilized camera feedback and April tag detection to locate and orient blocks, demonstrating proficiency in integrating vision systems with robotic control",
 				"Dynamic Object Interaction: Developed two approaches for interacting with moving objects - a sweep approach and a prediction-based method - showcasing adaptability in handling real-time, dynamic scenarios",
@@ -547,6 +548,7 @@
 				"Problem solving in complex environments"
 			],
 			"achievements": [
+				"Project: https://github.com/neelmulayPenn/Robotics_7DOFarm",
 				"Developed a bidirectional RRT algorithm that significantly improved convergence time compared to unidirectional RRT",
 				"Implemented a potential field planner with attractive and repulsive forces for goal-seeking and obstacle avoidance",
 				"Created forward kinematics and Jacobian calculations for a 7-joint robotic arm with additional virtual joints",
